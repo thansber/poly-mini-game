@@ -1,21 +1,12 @@
 import * as kebabCase from 'lodash/fp/kebabCase';
-import { MyApp } from './app';
-import { MyTopBar } from './top-bar';
-import { MyTopMessage } from './top-message';
-import { MyCards } from './cards';
-import { MyPopUpModal } from './pop-up-modal';
+import { XptButtonDemo } from './xpt-button-demo';
+import { XptButton } from './xpt-button';
 
 // add custom elements here
 const elements = {
-    MyApp,
-    MyTopBar,
-    MyTopMessage,
-    MyCards,
-    MyPopUpModal,
+    XptButtonDemo,
+    XptButton
 };
 
 // register all components as kebab case
-Object.keys(elements)
-    .forEach(key => {
-        customElements.define(kebabCase(key), elements[key])
-    });
+Object.keys(elements).forEach(key => customElements.define(elements[key].is, elements[key]));

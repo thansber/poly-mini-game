@@ -36,7 +36,18 @@ module.exports = {
         test: /\.ts?$/,
         use: 'ts-loader',
         exclude: /node_modules/
-      }
+      },
+	  {
+	    test: /\.postcss$/,
+	    use: [
+    	  {
+    	    loader: 'to-string-loader',
+    	  },
+    	  {
+    	    loader: 'postcss-loader',
+    	  }
+	    ]
+	  }
     ]
   },
   resolve: {

@@ -27,7 +27,11 @@ module.exports = {
         test: /\.ts?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
-      }
+      },
+	  {
+	    test: /\.postcss$/,
+	    use: ['text-loader', 'postcss-loader']
+	  }
     ]
   },
   resolve: {
